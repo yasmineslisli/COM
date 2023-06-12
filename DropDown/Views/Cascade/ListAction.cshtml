@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DropDown.Models.ActionProj>
+
+@{
+    ViewData["Title"] = "ListAction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<i class="pull-left "><img src="~/img/icons8-home-48.png" /></i>
+<span><h1>/Action/Liste des Actions</h1></span>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>
+                <label>Projet : @ViewBag.projname</label>
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            
+            <td>
+                <a asp-action="EditAction" asp-route-id="@item.Id">Modifier</a> |
+                
+                <a asp-action="DeleteAction" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="CreateAction" class="btn btn-primary mb-2">Nouvelle Action</a>
+</p>

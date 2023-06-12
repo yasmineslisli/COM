@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Valider";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<i class="pull-left "><img src="~/img/icons8-home-48.png" /></i>
+<span><h1>/Prévision/Prévisions validées et rejtées</h1></span>
+
+<div class="three_box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box_text">
+                    <h2>Prévisions Validées</h2>
+                    <i><img src="~/img/correct-and-incorrect-vectors.jpg" width="350px" height="200px" /></i>
+                    <a asp-action="ListValide" asp-controller="Prevision" class="btn btn-primary"><h3>@ViewBag.Valide</h3>Inspecter</a>
+                    
+                </div>
+               
+                    
+
+               
+            </div>
+            <div class="col-md-6">
+                <div class="box_text">
+                    <h2>Prévisions Rejetées</h2>
+                    <i><img src="~/img/incorrect-vectors.jpg" width="300px" height="200px" /></i>
+                    <a asp-action="ListRejet" asp-controller="Prevision" class="btn btn-primary"><h3>@ViewBag.Rejet</h3>Inspecter</a>
+
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+            <a asp-action="Index1" asp-controller="Home" class="btn btn-primary">Voir l'ensemble</a>
+            </div>
+        </div>
+    </div>
+</div>
